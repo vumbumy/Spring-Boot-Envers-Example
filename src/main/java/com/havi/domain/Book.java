@@ -15,13 +15,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 /**
  * Created by KimYJ on 2017-08-29.
  */
 @Data
 @Entity
 @NoArgsConstructor
-@AllArgsConstructor
 @Builder
 @Audited
 public class Book implements Serializable {
@@ -36,4 +36,11 @@ public class Book implements Serializable {
 
     @Column
     private Timestamp publishedAt;
+
+    @Builder
+    public Book(Long id, String title, Timestamp publishedAt) {
+        this.id = id;
+        this.title = title;
+        this.publishedAt = publishedAt;
+    }
 }
