@@ -32,3 +32,12 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
+
+jar {
+	enabled = false
+	archiveClassifier = '' //use empty string
+}
+
+bootJar {
+	launchScript()
+}
